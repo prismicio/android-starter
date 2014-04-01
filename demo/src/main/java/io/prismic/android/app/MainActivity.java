@@ -39,8 +39,8 @@ public class MainActivity extends ActionBarActivity {
     mDrawerList.setOnItemClickListener(new DrawerItemClickListener());
     mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.drawable.ic_drawer, R.string.drawer_open, R.string.drawer_close);
     mDrawerLayout.setDrawerListener(mDrawerToggle);
-    getActionBar().setDisplayHomeAsUpEnabled(true);
-    getActionBar().setHomeButtonEnabled(true);
+    getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    getSupportActionBar().setHomeButtonEnabled(true);
 
     prismic.init();
     prismic.registerListener(apiListener);
