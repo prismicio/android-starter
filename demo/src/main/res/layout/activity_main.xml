@@ -6,10 +6,24 @@
     tools:context="io.prismic.myapplication.app.MainActivity">
 
     <WebView
+            android:id="@+id/webView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/webView"
             />
+    <LinearLayout
+            android:id="@+id/loading"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:visibility="gone"
+            >
+
+        <ProgressBar
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:indeterminate="true" />
+    </LinearLayout>
+
     <ListView android:id="@+id/left_drawer"
               android:layout_width="240dp"
               android:layout_height="match_parent"
