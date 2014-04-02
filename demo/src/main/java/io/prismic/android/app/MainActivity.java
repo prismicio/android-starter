@@ -1,5 +1,6 @@
 package io.prismic.android.app;
 
+import android.graphics.Bitmap;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
@@ -10,6 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.AnimationUtils;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -63,13 +65,11 @@ public class MainActivity extends ActionBarActivity {
   };
 
   private void loadBookmark(String key) {
-    setLoading(true);
     app.prismic.getBookmark(key, new Prismic.Listener<Document>() {
       @Override
       public void onSuccess(Document result) {
         String html = result.asHtml(new BlankLinkResolver());
         mWebView.loadDataWithBaseURL(null, html, null, "UTF-8", null);
-        setLoading(false);
       }
       @Override
       public void onError(Api.Error error) {
