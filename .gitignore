@@ -1,6 +1,8 @@
-.gradle
-/android-kit/repos
-/local.properties
-/.idea
+.idea
 *.iml
+.gradle
+/local.properties
+/.idea/workspace.xml
+/.idea/libraries
 .DS_Store
+/build
